@@ -1,0 +1,52 @@
+input{
+    width: 90%;
+    padding: 0.5rem;
+    text-align: center;
+
+    font-family: 'SUSE', sans-serif;
+    font-size: 1rem;
+}
+
+ul.emprestimos{
+    display: block;
+    list-style-type: none;
+    padding: 1rem 0;
+    margin: 0.6rem 0;
+
+    & li{
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        padding: 0 2rem;
+
+        transition: 0.25s;
+
+        &:hover{
+            background-color: gold;
+        }
+
+        &.header{
+            background-color: lightgray;
+        }
+
+        & a, label{
+            display: grid;
+            grid-template-columns: 11.1% 22.2% 11.1% 22.2% 11.1% 22.2% 11.1%;
+            
+            height: 100%;
+            width: 100%;
+
+            padding: 1rem;
+
+            text-decoration: none;
+            color: black;
+
+            & p, strong{
+                float: left;
+                margin: 0 2rem;
+            }
+        }
+    }
+}

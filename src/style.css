@@ -1,8 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+
 html, body, #root{
-  display: grid;
+  display: block;
 
   height: 100%;
   width: 100%;
 
   margin: 0;
+
+  justify-content: center;
+  text-align: center;
+
+  font-family: 'SUSE', sans-serif;
+}
+
+main{
+  height: -webkit-fill-available;
+
+  align-content: center;
 }

@@ -1,9 +1,13 @@
 import 'react';
+import './style.css';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
   return (
     <header>
-        <p>Aqui é o Header</p>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/historico">Histórico</NavLink>
+      <NavLink to="/sobre">Sobre</NavLink>
     </header>
   )
 }

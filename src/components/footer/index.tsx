@@ -1,9 +1,10 @@
 import 'react';
+import './style.css';
 
 function Footer() {
   return (
     <footer>
-        <p>Aqui é o Footer</p>
+        <p>@Biblioteca</p>
     </footer>
   )
 }
