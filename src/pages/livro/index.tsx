@@ -79,9 +79,9 @@ function LivroDetalhes() {
   };
 
   return (
-    <>
+    <div className="flex-wrap">
       <section>
-        <h1>Livro: {livro?.nome}</h1>
+        <h1>{livro?.nome}</h1>
         <p>Autor: {livro?.autor}</p>
         <p>Disponível: {livro?.quantidadeDisponivel}</p>
       </section>
@@ -105,7 +105,7 @@ function LivroDetalhes() {
 
         <button type="submit">Emprestar</button>
       </form>
-    </>
+    </div>
   );
 }
 

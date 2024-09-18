@@ -13,7 +13,7 @@ function UserRoutes() {
             <Route path="/" element={<Home/>}/>
             <Route path="/livro/:id" element={<LivroDetalhes/>}/>
             <Route path="/historico" element={<Historico/>}/>
-            <Route path="/historico/:id" element={<EmprestimoDetalhes/>}/>
+            <Route path="/emprestimo/:id" element={<EmprestimoDetalhes/>}/>
             <Route path="*" element={<NotFound/>}/>
         </Routes>
     )

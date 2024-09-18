@@ -54,13 +54,19 @@ function Historico() {
             </li>
             {emprestimosFiltrados.map((emprestimo) => (
             <li key={emprestimo.id}>
-                <NavLink to={`/historico/${emprestimo.id}`}>
+                <NavLink to={`/emprestimo/${emprestimo.id}`}>
                     <p>{emprestimo.id}</p>
                     <p>{emprestimo.livro.nome}</p>
                     <p>{emprestimo.aluno.matricula}</p>
                     <p>{(new Date(emprestimo.dataFim)).toLocaleDateString("pt-BR")}</p>
                     <p>{emprestimo.dataDevolucao ? (new Date(emprestimo.dataDevolucao)).toLocaleDateString("pt-BR") : 'Aguardando'}</p>
-                    <p>{emprestimo.atrasado ? 'Atrasado' : 'Em dia'}</p>
+                    <p>
+                      {
+                        emprestimo.dataDevolucao === null ? 'Aguardando'
+                        : emprestimo.dataDevolucao > emprestimo.dataFim ? 'Atrasado'
+                        : 'Concluído'
+                      }
+                    </p>
                 </NavLink>
             </li>
             ))}

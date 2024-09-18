@@ -34,7 +34,7 @@ function EmprestimoDetalhes() {
       });
       
       if (response.ok) {
-        alert('Empréstimo finalizado com sucesso!');
+        alert('Livro devolvido com sucesso!');
         window.location.reload();
       } else {
         console.error('Erro ao finalizar empréstimo');
@@ -53,7 +53,7 @@ function EmprestimoDetalhes() {
       });
   
       if (response.ok) {
-        alert('Atraso finalizado com sucesso!');
+        alert('Pagamento efetuado com sucesso!');
         window.location.reload();
       } else {
         console.error('Erro ao finalizar o atraso');
@@ -65,7 +65,7 @@ function EmprestimoDetalhes() {
   
   
   return (
-    <>
+    <div className='flex-wrap'>
         <section>
             <h1>Empréstimo {emprestimo?.id}</h1>
             <p>Livro: {emprestimo?.livro.nome}</p>
@@ -88,38 +88,38 @@ function EmprestimoDetalhes() {
             // Caso o emprestimo ainda não tenha sido finalizado
             emprestimo?.dataDevolucao === null ? (
                 <form onSubmit={handleFinalizarEmprestimo}>
-                    <button type="submit">Finalizar</button>
+                  <strong>Aguardando devolução do livro</strong>
+                  <button type="submit">Devolver</button>
                 </form>
             )
         :
             // Caso a devolução tenha sido atrasada e o pagamento ainda não tenha sido efetuado
             emprestimo?.atrasado === true && emprestimo?.atrasos[0].pago === false ? (
                 <form onSubmit={handleFinalizarAtraso}>
-                    <label>
-                        <strong>R$ {emprestimo?.atrasos[0].valor.toFixed(2)}</strong>
-                    </label>
-    
-                    <label>Forma de Pagamento</label>
-                    <select>
-                        <option value="pix">PIX</option>
-                        <option value="debito">Cartão Debito</option>
-                        <option value="credito">Cartão Crédito</option>
-                        <option value="dinheiro">Dinheiro</option>
-                        <option value="boleto">Boleto</option>
-                    </select>
-    
-                    <button type="submit">Pagar Atraso</button>
+                  <strong>Valor referente ao atraso</strong>
+                  <h3>R$ {emprestimo?.atrasos[0].valor.toFixed(2)}</h3>
+  
+                  <label>Forma de Pagamento</label>
+                  <select>
+                    <option value="pix">PIX</option>
+                    <option value="debito">Cartão Debito</option>
+                    <option value="credito">Cartão Crédito</option>
+                    <option value="dinheiro">Dinheiro</option>
+                    <option value="boleto">Boleto</option>
+                  </select>
+  
+                  <button type="submit">Pagar Atraso</button>
                 </form>
             )
             : emprestimo?.dataDevolucao !== null ? (
                 <form>
-                    <strong>Operação finalizada!</strong>
+                  <strong>Operação finalizada!</strong>
                 </form>
             )
             : ("...")
         }
       
-    </>
+    </div>
   );
 }
 
