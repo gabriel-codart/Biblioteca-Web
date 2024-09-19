@@ -1,0 +1,15 @@
+.sobre{
+    display: grid;
+
+    max-width: fit-content;
+
+    text-align: justify;
+
+    margin: auto;
+    padding: 2rem;
+
+    & h1, h2{
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+}

@@ -4,4 +4,13 @@ footer{
     color: gold;
 
     padding: 2rem;
+
+    & a{
+        color: gold;
+        transition: 0.25s;
+
+        &:hover{
+            color: goldenrod;
+        }
+    }
 }
